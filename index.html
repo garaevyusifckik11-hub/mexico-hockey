@@ -3,45 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enhanced Mexico Hockey Game</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="game.js"></script>
+    <title>Mexico Hockey Game</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #001f3f; color: white; }
+        #splash { text-align: center; margin-top: 15%; }
+        #menu { display: none; text-align: center; }
+        #game { display: none; }
+    </style>
 </head>
 <body>
-    <canvas id="gameCanvas"></canvas>
+    <div id="splash">
+        <h1>Welcome to Mexico Hockey!</h1>
+        <button onclick="startMenu()">Start</button>
+    </div>
+    <div id="menu">
+        <h2>Select Your Character</h2>
+        <button onclick="startGame('character1')">Character 1</button>
+        <button onclick="startGame('character2')">Character 2</button>
+    </div>
+    <div id="game">
+        <h2>Score: <span id="score">0</span></h2>
+        <canvas id="gameCanvas" width="800" height="600"></canvas>
+    </div>
+
     <script>
-        // Initialize the game with improved graphics and animated backgrounds
-        const canvas = document.getElementById('gameCanvas');
-        const ctx = canvas.getContext('2d');
-
-        // Set up canvas dimensions
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-
-        // Background animation
-        function drawBackground() {
-            // Your animated background code here
+        let score = 0;
+        function startMenu() {
+            document.getElementById('splash').style.display = 'none';
+            document.getElementById('menu').style.display = 'block';
         }
-
-        // Particle effects
-        function createParticles() {
-            // Your particle effects code here
+        function startGame(character) {
+            document.getElementById('menu').style.display = 'none';
+            document.getElementById('game').style.display = 'block';
+            initGame(character);
         }
-
-        // Character customization
-        function customizeCharacter() {
-            // Customization code here
+        function initGame(character) {
+            // Game mechanics, rendering, particle effects, etc.
+            let canvas = document.getElementById('gameCanvas');
+            let ctx = canvas.getContext('2d');
+            // Initialize game loop, scoring, and graphics rendering here
         }
-
-        // Game loop with smooth gameplay mechanics
-        function gameLoop() {
-            drawBackground();
-            createParticles();
-            customizeCharacter();
-            requestAnimationFrame(gameLoop);
-        }
-
-        gameLoop();
     </script>
 </body>
 </html>
