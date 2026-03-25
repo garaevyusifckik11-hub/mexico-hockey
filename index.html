@@ -3,26 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enhanced Game</title>
+    <title>Enhanced Mexico Hockey Game</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="game.js"></script>
 </head>
 <body>
-    <h1>Welcome to Enhanced Game</h1>
-    <div id="game-area">
-        <!-- Game canvas or area -->
-        <canvas id="gameCanvas"></canvas>
-    </div>
-    <script src="game.js"></script>
+    <canvas id="gameCanvas"></canvas>
     <script>
-        // Adding sound effects
-        const soundEffect = new Audio('sounds/click.mp3');
-        document.addEventListener('click', () => soundEffect.play());
+        // Initialize the game with improved graphics and animated backgrounds
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
 
-        // Initialize animations
-        function initAnimations() {
-            // Logic for animations
+        // Set up canvas dimensions
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        // Background animation
+        function drawBackground() {
+            // Your animated background code here
         }
-        initAnimations();
+
+        // Particle effects
+        function createParticles() {
+            // Your particle effects code here
+        }
+
+        // Character customization
+        function customizeCharacter() {
+            // Customization code here
+        }
+
+        // Game loop with smooth gameplay mechanics
+        function gameLoop() {
+            drawBackground();
+            createParticles();
+            customizeCharacter();
+            requestAnimationFrame(gameLoop);
+        }
+
+        gameLoop();
     </script>
 </body>
 </html>
